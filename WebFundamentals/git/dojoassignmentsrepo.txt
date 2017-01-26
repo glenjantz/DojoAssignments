@@ -1,0 +1,11 @@
+step 1 -> log onto github.com
+step 2 -> click the plus in the upper right hand corner and select new repository
+step 3 -> name the repository and click create
+step 4 -> windows key + r then type cmd to bring up terminal
+step 5 -> type cd desktop, cd dojoassignments
+step 6 -> type git ini, git add ., git commit -m "first push to github"
+step 7 -> go back to github and copy the link given to push to the url should be similar to git remote add origin http:githubxxxxxxxx
+step 8 -> go back to terminal and input the link
+step 9 -> type git push -u origin master
+step 10 -> make txt file in dojoassignments folder and explain whats in the folder
+step 11 -> git status, git add ., git commit -m "added a readme"

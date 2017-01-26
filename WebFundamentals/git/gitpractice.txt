@@ -1,0 +1,21 @@
+windows + r -> cmd
+cd desktop
+md test
+cd test
+copy  nul index.html
+copy nul styles.css
+copy nul aboutme.txt
+git init
+git add .
+git commit -m "made a test folder and added aboutme.txt styles.css and index.html"
+git status
+git add aboutme.txt
+git status
+git commit -m "updated aboutme"
+git status
+git add aboutme.txt
+git status
+git commit -m "added favorite movie to aboutme"
+git revert -n HEAD
+git add aboutme.txt
+git commit -m "reverted and edited"
