@@ -6,6 +6,6 @@ step 5 -> type cd desktop, cd dojoassignments
 step 6 -> type git ini, git add ., git commit -m "first push to github"
 step 7 -> go back to github and copy the link given to push to the url should be similar to git remote add origin http:githubxxxxxxxx
 step 8 -> go back to terminal and input the link
-step 9 -> type git push -u origin master
+step 9 -> type git push -u origin master <--push to github command
 step 10 -> make txt file in dojoassignments folder and explain whats in the folder
 step 11 -> git status, git add ., git commit -m "added a readme"
