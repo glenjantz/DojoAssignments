@@ -1,6 +1,6 @@
 for(var i=60;i>=0;i--){
   if(i===0){
-    console.log("IT'S MY BIRTHDAY YESSSSSSS!!!!!!!")
+    console.log("IT'S MY BIRTHDAY YESSSSSSS!!!!!!!");
   }
   if(i<=5 && i!=0){
     console.log(i+" DAYS UNTIL MY BIRTHDAY!!!");
