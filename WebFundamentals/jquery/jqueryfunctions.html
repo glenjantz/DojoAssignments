@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JQUERY FUNCTIONS!</title>
+    <style type="text/css">
+      .select{
+        color:blue;
+      }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.first').click(function(){
+          alert("you have clicked a button");
+        });
+        $('#bacon2').click(function(){
+        $('#bacon').hide(function(){
+        $('#bacon3').click(function(){
+        $('#bacon').show(function(){
+});
+});
+        });
+        });
+        $('#test').click(function(){
+        $('#second').toggle();
+        });
+        $('#slide').click(function(){
+        $('#slideme').slideDown("slow");
+        });
+        $('#slid').click(function(){
+        $('#slidemeup').slideUp("slow");
+        });
+        $('#slidet2').click(function(){
+        $('#slidet').slideToggle();
+        });
+        $('#appear').click(function(){
+        $('#fadein').fadeIn("slow");
+        });
+        $('#disappear').click(function(){
+        $('#fadeout').fadeOut("slow");
+        });
+        $('#addclass1').click(function(){
+        $('#addclass').addClass('select')
+        });
+        $('#before2').click(function(){
+        $('#before1').before('see i told you')
+        });
+        $('#after2').click(function(){
+        $('#after1').before('see i told you')
+        });
+});
+    </script>
+  </head>
+  <body>
+      <p class="first">Hello there! click me</p>
+      <p id="bacon">Spicy jalapeno bacon ipsum dolor amet doner pork loin kielbasa meatball spare ribs porchetta landjaeger pastrami tri-tip jowl sausage bresaola venison tongue.</p>
+      <button id="bacon2">This button should hide the bacon</button>
+      <button id="bacon3">This button should show the bacon once again</button>
+      <p "display:none" id="second">This paragraph should be modified by the toggle button</p>
+      <button id="test">Toggle me</button>
+      <button id="slide">slide me down</button>
+      <p id="slideme" style="display:none">This text should be modified by the slidedown function</p>
+      <br>
+      <br>
+      <button id="slid">slide me up!</button>
+      <p id="slidemeup">This text should be modified by the slideup function</p>
+      <br />
+      <br />
+      <p id="slidet">This text should be altered by the slidetoggle function</p>
+      <button id="slidet2"> test the slidetoggle</button>
+      <br />
+      <p id="fadein" style="display:none"> This text should fade in from nothing!</p>
+      <button id="appear">Click me to test fadein</button>
+      <br />
+      <p id="fadeout"> This text should fade out and dissappear</p>
+      <button id="disappear">Click me to test fadeout</button>
+      <br />
+      <br />
+      <p id=addclass>This text should be modified by the addclass button</p>
+      <button id="addclass1"> Click me to add a class to the p</button>
+      <br />
+      <p id=before1>This text should have something added before it!</p>
+      <button id="before2"> Click me to add some text before the p</button>
+      <br />
+      <p id=after1>This text should have something added after it!</p>
+      <button id="after2"> Click me to add some text aftere the p</button>
+      
+  </body>
+</html>
