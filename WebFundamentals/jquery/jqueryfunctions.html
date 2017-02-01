@@ -47,7 +47,7 @@
         $('#before1').before('see i told you')
         });
         $('#after2').click(function(){
-        $('#after1').before('see i told you')
+        $('#after1').after('see i told you')
         });
 });
     </script>
@@ -80,11 +80,12 @@
       <p id=addclass>This text should be modified by the addclass button</p>
       <button id="addclass1"> Click me to add a class to the p</button>
       <br />
-      <p id=before1>This text should have something added before it!</p>
+      'see i told you'
+      <span id=before1>This text should have something added before it!</span>
       <button id="before2"> Click me to add some text before the p</button>
       <br />
       <p id=after1>This text should have something added after it!</p>
       <button id="after2"> Click me to add some text aftere the p</button>
-      
+
   </body>
 </html>
