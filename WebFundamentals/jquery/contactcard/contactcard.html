@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>contact card</title>
+    <style type="text/css">
+    .mydiv{
+      display: inline-block;
+      height: 120px;
+      width: 200px;
+      background-color: grey;
+      margin-left: 100px;
+      }
+      .myform{
+        display: inline-block;
+        vertical-align: top;
+      }
+      .mydiv h3{
+        display: inline-block;
+      }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        // function flip(){
+        // $('.newcard').click(function(){
+        // var temp = $(this).
+        //
+        // });
+        // }
+
+      $(document).ready(function(){
+      $(document).on('click','button',function(){
+      var x =$("input[name='first']").val();
+      var y =$("input[name='last']").val();
+      console.log(x);
+      $('.mydiv').append("<h3>"+x+"</h3> <h3>"+y+"</h3><p>click here for description</p>");
+
+    });
+    });
+    </script>
+  </head>
+  <body>
+    <form class="myform">
+      <label for="first_name">First name:</label>
+      <input type="text" id="first_name" name="first" />
+      <br />
+      <label for="last_name">Last name:</label>
+      <input type="text" id="last_name" name="last" />
+    </form>
+    <div class="mydiv" alt-data-src="flippy">
+
+    </div>
+    <br />
+    <p>Description:</p>
+    <textarea rows="4" cols="30" alt-src="switch">
+    </textarea>
+    <br />
+    <button>ADD USER</button>
+  </body>
+</html>
