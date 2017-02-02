@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>more jquery practice</title>
+    <style type="text/css">
+    table{
+      margin: 2px;
+      border: 2px solid black;
+    }
+    h1{
+      border-bottom: 2px solid grey;
+      display: inline-block;
+    }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+    // console.log("the document is ready");
+    $("button").click(function(){
+      // console.log("button clicked");
+      var x= $("input[name='first']").val();
+      var y= $("input[name='last']").val();
+      var z= $("input[name='e-mail']").val();
+      var a= $("input[name='digits']").val();
+      // console.log(x);
+      $('table').children().append(
+        "<tr><td>"+x+
+        "</td><td>"+y+
+        "</td><td>"+z+
+        "</td><td>"+a+
+        "</td><tr>"
+      );
+
+    });
+    });
+
+    </script>
+  </head>
+  <body>
+    <table>
+      <thead>
+          <th id="1">First Name:</th>
+          <th id="2">Last Name:</th>
+          <th id="3">Email:</th>
+          <th id="4">contact no.:</th>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <div id="mydiv">
+
+    </div>
+    <h1>add user</h1>
+    <form>
+      <label for="first_name">First name</label>
+      <input type="text" id="first_name" name="first" />
+      <br />
+      <label for="last_name">Last name</label>
+      <input type="text" id="last_name" name="last" />
+      <br />
+      <label for="email">email</label>
+      <input type="text" id="email" name="e-mail" />
+      <br />
+      <label for="phone">contact no.</label>
+      <input type="text" id="phone" name="digits"/>
+    </form>
+    <br />
+    <button>Add user</button>
+  </body>
+</html>
