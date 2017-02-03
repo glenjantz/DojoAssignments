@@ -5,22 +5,29 @@
     <title>weather app!</title>
     <style type="text/css">
     .mydiv{
-      height: 200px;
-      width: 200px;
-      background-color: red;
+      height: 300px;
+      width: 250px;
+      /*background-color: red;*/
     }
     </style>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type-"text/javascript">
     $(document).ready(function() {
-      console.log("im ready")
+      // console.log("im ready")
     $('form').submit(function() {
-        console.log("submitted")
-        var cityname = $("input[name='weatherin']").val();
-        console.log(cityname)
-      // your code here (build up your url)
-    $.get("http://api.openweathermap.org/data/2.5/weather?q= HERE &APPID=4dabb983d31d41fc258fe4f75b930e7b", function(res) {
-      console.log(res);
+        // console.log("submitted")
+        var cityname = $("#weather").val();
+         console.log(cityname)
+      // your code here (build up your url
+    $.get("http://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&APPID=4dabb983d31d41fc258fe4f75b930e7b", function(res) {
+       console.log(res.main.temp);
+       var temperature = res.main.temp;
+       var faren = ((temperature * 9)/5) - 459.67;
+       var html_str1 = "<h1>"+cityname+"</h1>"
+       var html_str2 = "<h2>temperature:"+faren+" degrees F</h2>"
+     $('.mydiv').html(html_str1+html_str2);
+    //   console.log(faren)
+    console.log(html_str2);
                                                 // your code here
       }, 'json');
                                                 // don't forget to return false so the page doesn't refresh
@@ -32,7 +39,7 @@
   <body>
     <form>
       <input type="text" id="weather" name="weatherin">
-      <button>search weather</button>
+      <button>search weather by city</button>
     </form>
 
     <br />
