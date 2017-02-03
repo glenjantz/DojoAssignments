@@ -2,17 +2,19 @@
   <head>
     <meta charset="utf-8">
     <title>Pokemon</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
           for( var i = 1; i<=151;i++){
             $('div').append("<img src='http://pokeapi.co/media/img/"+ i + ".png'>");
           }
+          
         });
     </script>
   </head>
     <body>
-      <div></div>
+      <div id="left"></div>
+      <div id="right"></div>
     </body>
 </html>
