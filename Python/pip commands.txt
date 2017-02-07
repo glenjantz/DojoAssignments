@@ -1,0 +1,8 @@
+pip install (modulename) -- installs the selected package
+pip liar --  lists the installed packages
+pip install (alreadyinstalledmodule) -- returns requirement already satisfied and the location of it if package is already installed
+pip freeze -- Output installed packages in requirements format. (not sure what that means..)
+after executing the line it created a requirements.txt file on my desktop with the same items that came up from running pip freeze
+pip uninstall (modulename) uninstalls the selected package.
+pip show (modulename) shows the  name of package,version,short summary of package,home-page,author,authors email,license,location on computer and any required files to run the nmodule
+pip search (modulename) shows all the version notes for the package
