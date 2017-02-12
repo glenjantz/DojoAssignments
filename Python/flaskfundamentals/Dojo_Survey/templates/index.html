@@ -5,6 +5,14 @@
     <title>dojo survey</title>
   </head>
   <body>
+    <h1>fill out the form </h1>
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <p>{{message}}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
     <form action='/result' method='post'>
         Name:<input type='text' name='name'><br />
         Dojo Location:
