@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My first Django page!</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'timedisplay/css/styles.css' %}"media="screen" title="no title"  charset="utf-8">
+  </head>
+  <body>
+
+    <h1>Hello World!</h1>
+
+    <p>{{curdate}}</p>
+    <p>{{curtime}}</p>
+  </body>
+</html>

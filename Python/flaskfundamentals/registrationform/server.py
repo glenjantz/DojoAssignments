@@ -13,15 +13,15 @@ def processform():
         flash("Email cannot be blank")
     elif not EMAIL_REGEX.match(request.form['email']):
         flash("Must be a valid email address")
-    if not request.form['first_name'].isalpha():
+    elif not request.form['first_name'].isalpha():
         flash("First name must contain only letters and can not be blank")
-    if not request.form['last_name'].isalpha():
+    elif not request.form['last_name'].isalpha():
         flash("Last name must contain only letters and can not be blank")
-    if len(request.form['pass'])<8 or len(request.form['pass_c'])<8:
+    elif len(request.form['pass'])<8 or len(request.form['pass_c'])<8:
         flash("Password must be greater than 8 characters")
-    elif pass_regex.match(request.form['pass'])<1:
+    elif not pass_regex.match(request.form['pass'])<1:
         flash("Password must contain at least 1 uppercase character")
-    if request.form['pass'] != request.form['pass_c']:
+    elif request.form['pass'] != request.form['pass_c']:
         flash("Password must match!")
     else:
         flash("success!")
