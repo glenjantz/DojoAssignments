@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to the results page!</title>
+  </head>
+  <body>
+    <h1>Hello!</h1>
+
+    <h2>Submitted info: </h2>
+    <h3>Name: {{request.session.name}}</h3>
+    <h3>Dojo location: {{request.session.loc}}</h3>
+    <h3>Favorite language: {{request.session.lang}}</h3>
+    <h3>Comments: {{request.session.com}} </h3>
+    <form action="/">
+      <input type="submit" value="go back" />
+    </form>
+  </body>
+</html>
