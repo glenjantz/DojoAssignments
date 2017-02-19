@@ -1,0 +1,31 @@
+#header{
+  height: 110px;
+  background-color: grey;
+}
+.nav-bar{
+  display: inline-block;
+  background-color: grey;
+  width: 25%;
+  margin: 5px;
+  height: 300px;
+}
+
+.main{
+  display: inline-block;
+  vertical-align: top;
+  background-color: grey;
+  width: 72%;
+  margin: 5px;
+  height: 300px;
+}
+div{
+    border-radius: 5;
+    color: blue;
+}
+.nav-bar p{
+  font-family: helvetica;
+}
+#article-box{
+  height: 100%;
+  width: 100%;
+}

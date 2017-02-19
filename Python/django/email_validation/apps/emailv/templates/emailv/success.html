@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Successful validation!</title>
+  </head>
+  <body>
+    <h1>hello</h1>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <h2>Email addresses entered:</h2>
+    {% for email in emails %}
+    <p>Email: {{email.email}} {{email.created_at}}
+      <form action="/delete/{{email.id}}" method='POST'>
+        {% csrf_token %}
+      <input type="submit" value="remove">
+    </form></p> <br>
+    {% endfor %}
+    <form action="/">
+      {% csrf_token %}
+      <input type="submit" value="Go back">
+    </form>
+  </body>
+</html>
