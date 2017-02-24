@@ -82,3 +82,5 @@ def delete(request, id):
             # </form><br />
             # {% endfor %}
         # Created: {{users.created_at}}<br />
+def any(request):
+    return redirect('/')
