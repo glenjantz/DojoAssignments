@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>success</title>
+  </head>
+  <body>
+    <h1>Hello, {{loggeduser.name}}</h1>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <form action="/logout" method='post'>
+      {% csrf_token %}
+      <input type="submit"  value="log out">
+    </form>
+    <form action="/addtravel">
+      {% csrf_token %}
+      <input type="submit" name="travel" value="add travel plans">
+    </form>
+
+    <h2>Your scheduled trips</h2>
+    <table>
+      <tr>
+        <th>Destination</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Description</th>
+      </tr>
+      {% for trip in trips %}
+      <tr>
+        <td><a href="/destination/{{trip.id}}">{{trip.destination}}</a></td>
+        <td>{{trip.datefrom}}</td>
+        <td>{{trip.dateto}} </td>
+        <td>{{trip.description}}</td>
+      </tr>
+      {% endfor %}
+      {% for trip in othertrips %}
+        {% if loggeduser in trip.join.all  %}
+          <tr>
+            <td><a href="/destination/{{trip.id}}">{{trip.destination}}</a></td>
+            <td>{{trip.datefrom}}</td>
+            <td>{{trip.dateto}} </td>
+            <td>{{trip.description}}</td>
+          </tr>
+        {%endif%}
+      {%endfor%}
+    </table>
+    <h2>Other users trips</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Destination</th>
+          <th>Start date</th>
+          <th>End date</th>
+          <th>Join trip</th>
+        </tr>
+        {% for trip in othertrips %}
+          {% if loggeduser in trip.join.all %}
+          <p>hello</p>
+            {% elif trip.creator.id != request.session.userid %}
+              <tr>
+                <td>{{trip.creator.name}}</td>
+                <td><a href="/destination/{{trip.id}}">{{trip.destination}}</a></td>
+                <td>{{trip.datefrom}}</td>
+                <td>{{trip.dateto}} </td>
+                <td>
+                  <form action="/jointrip/{{trip.id}}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="join trip">
+                  </form>
+                </td>
+              </tr>
+          {% endif %}
+        {% endfor %}
+
+      </table>
+  </body>
+</html>
