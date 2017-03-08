@@ -1,18 +1,22 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
-
 struct Card {
     var value: String?
     var suit: String?
     var num: Int
+//    init(value: String?, suit: String?, num: Int){
+//        self.value=value
+//        self.suit = suit
+//        self.num = num
+//    }
     func show(){
         if let val = self.value, let su = self.suit{
         print ("\(val) of \(su)")
         }
     }
 }
-
+;
 class Deck {
     var cards = [Card]()
     init(){
