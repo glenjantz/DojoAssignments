@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     var colors = ["gray","gray","gray","gray","gray","gray","gray","gray","gray"]
     
     var count = 1
-    
+    //var turn = "red"
     override func viewDidLoad() {
         super.viewDidLoad()
         winnerLabel.isHidden = true
@@ -64,6 +64,20 @@ class ViewController: UIViewController {
 
     
     @IBAction func topLeftButtonPressed(_ sender: UIButton) {
+        // if turn = "red" {
+        
+        // sender.backgroundColor = UIColor.red
+        // colors[sender.tag-1] == "red"
+        // if checkGame() == "Red wins!" {
+        
+        //
+        //winnerLabel.isHidden = false
+        //winnerLabel.text = "Red wins!"
+        // turn = "blue"
+        // }
+        
+        
+        
         if colors[sender.tag-1] == "gray"{
             
         if sender.tag == 1 {
