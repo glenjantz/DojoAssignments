@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import UIKit
+
+protocol BucketListDelegate: class {
+    func cancelButtonPressed(by controller: AddItemViewController)
+    func saveButtonPressed(by controller: AddItemViewController, with text: String, at indexPath: NSIndexPath?)
+}
