@@ -71,7 +71,7 @@ class bucketlistViewController: UITableViewController, AddItemTableViewControlle
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        print (sender)
         if sender == nil {
             let navigationController = segue.destination as! UINavigationController
             let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController

@@ -23,8 +23,7 @@ class AddItemTableViewController: UITableViewController {
     
     
    
-    
-    
+
 
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         delegate?.cancelButtonPressed(by: self)
