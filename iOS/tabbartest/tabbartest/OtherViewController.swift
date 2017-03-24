@@ -12,9 +12,11 @@ import UIKit
 
 class OtherViewController: UIViewController {
     
+    var delegate: TabBarDelegate?
     @IBOutlet weak var secondpagelabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -24,7 +26,13 @@ class OtherViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.delegate?.saveitem(by: self, text: "bilbo")
         print("SecondViewController viewWillAppear")
     }
+    
+   // func saveitem(by controller: ViewController, text: String) {
+    //    print(text)
+     //   secondpagelabel.text = text
+  //  }
     
 }
