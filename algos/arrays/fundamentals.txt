@@ -1,0 +1,32 @@
+What is source code?
+  a text listing of commands to be compiled or assembled into an executable computer program.
+What makes computers so “smart”, anyway?
+  people design computers to do things, computers do nothing without people directing it
+What is the purpose of a programming language?
+ to interpret tasks to computer language....01010101010
+What are 3 examples of programming languages? Why are there so many of these?
+javascript,python,swift. each language has a list of things it is good and bad at ie/ speed,readability
+What is a variable? Why are variables useful?
+ a variable something that holds on to information in the form of integers,strings,arrays,objects,functions....etc
+What is the difference between a single-equals (=) and a double-equals (==)?
+ = means set in programming, == is a comparison "equals to"
+What is the difference between a double-equals (==) and a triple-equals (===)?
+==  converts data types and compares them,  1 == "1" returns true, === means equal data types... 1 === "1" returns false.... 1 === 1 returns true
+Why does the developer console exist?
+ to test the functionality of lines of code
+When we talk about “conditional” statements, what does that mean? What is an example?
+ conditional means under certain conditions..... if (this is true){ then do this} else{do something else //optional}
+Why would we want FOR or WHILE loops in our source code?
+  in order to reduce repeating the same functionality over and over
+When would you use a WHILE loop, instead of a FOR loop?
+  when you dont know how many times the loop needs to run
+What is a function? Why would we use functions?
+  a function is a set of codes that run when called
+How many values can you receive back from a function? How many values can you send in?
+  1 value can be returned, you can set as many paramaters to a function as needed
+What is an array? How many values does it hold?
+ an array is a list of values seperated by comments, they can hold as many values as the computers memory allows
+What is a T-diagram and why should I know how to use one?
+ a T-diagram represents a table that tracks variable changes as code is being run.. to find out whats wrong with your code
+What are the two ways to comment JS code? When would you use one versus the other?
+single lines with //  multiple lines with /* */  with single line comments you can have a line of code and then a comment next to it explaining its functionality
