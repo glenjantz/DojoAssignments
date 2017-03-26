@@ -11,7 +11,6 @@ import CoreData
 class BucketList4TableViewController: UITableViewController, BucketListItemDelegate {
 
 //    var items = ["Goto the moon", "get black belt", "eat lunch"]
- 
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var items = [BucketListItem]()
     
