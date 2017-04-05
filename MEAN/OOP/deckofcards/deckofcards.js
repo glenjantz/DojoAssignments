@@ -23,7 +23,7 @@
 
 deck.prototype.makeDeck = function(){
   var suits = ["hearts",'diamonds',"clubs","spades"];
-  var values = [2,3,4,5,6,7,8,9,10,11,12,13];
+  var values = [2,3,4,5,6,7,8,9,10,11,12,13,14];
   for(var suit in suits){
     for(var value in values){
       this.deck.push(values[value] + " of " +suits[suit]);

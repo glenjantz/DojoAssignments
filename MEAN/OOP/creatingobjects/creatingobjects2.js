@@ -45,11 +45,12 @@ Bus.makeNoise = function(){
 }
 // Bus.makeNoise()
 Bus.pickUp = function(num){
-  Bus.passengers += num;
+  this.passengers += num;
+  return this
 }
-// console.log(Bus.passengers)
-// // Bus.pickUp(1)
-// console.log(Bus.passengers)
+console.log(Bus.passengers)
+Bus.pickUp(1).pickUp(2)
+console.log(Bus.passengers)
 // Bus.checkMiles()
 // Bus.move()
 // Bus.checkMiles()

@@ -35,6 +35,7 @@ function VehicleConstructor(name, wheels, passengers, speed){
       char += Math.floor(Math.random()*35);
     }
   }
+
     createVin();
 
 
@@ -78,4 +79,5 @@ bus.makeNoise()
 bus.checkMiles()
 bus.pickUp(1)
 console.log(bus.passengers)
+console.log(bus.vin)
 console.log(bus.vin)
