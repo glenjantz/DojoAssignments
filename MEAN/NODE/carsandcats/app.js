@@ -15,7 +15,7 @@ var server = http.createServer(function (request, response){
   }
   else if(request.url ==='/images/car.jpg'){
     //NO UTF 8 FOR IMAGES
-    fs.readFile('./images/car.jpg',function (errors, contents){
+    fs.readFile('images/car.jpg',function (errors, contents){
       if(errors){
         console.log(errors);
       }
@@ -27,7 +27,7 @@ var server = http.createServer(function (request, response){
   }
   else if(request.url ==='/images/cat.jpg'){
     //NO UTF 8 FOR IMAGES
-    fs.readFile('./images/cat.jpg',function (errors, contents){
+    fs.readFile('images/cat.jpg',function (errors, contents){
       if(errors){
         console.log(errors);
       }
@@ -39,7 +39,7 @@ var server = http.createServer(function (request, response){
   }
   else if(request.url ==='/images/cat2.jpg'){
     //NO UTF 8 FOR IMAGES
-    fs.readFile('./images/cat2.jpg',function (errors, contents){
+    fs.readFile('images/cat2.jpg',function (errors, contents){
       if(errors){
         console.log(errors);
       }
@@ -50,7 +50,7 @@ var server = http.createServer(function (request, response){
     })
   }
   else if(request.url ==='/stylesheets/cars.css'){
-    fs.readFile('./stylesheets/cars.css','utf8',function (errors, contents){
+    fs.readFile('stylesheets/cars.css','utf8',function (errors, contents){
       if(errors){
         console.log(errors);
       }
@@ -72,7 +72,7 @@ var server = http.createServer(function (request, response){
     });
   }
   else if(request.url ==='/stylesheets/cats.css'){
-    fs.readFile('./stylesheets/cats.css','utf8',function (errors, contents){
+    fs.readFile('stylesheets/cats.css','utf8',function (errors, contents){
       if(errors){
         console.log(errors);
       }
@@ -99,4 +99,4 @@ var server = http.createServer(function (request, response){
 });
 
 server.listen(7077);
-console.log("Running in localhost at port 6789");
+console.log("Running in localhost at port 7077");
