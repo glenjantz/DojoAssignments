@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>home page</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function (){
+            // this triggers the connection event in our server!
+            var socket = io.connect();
+        $('.buttonclass').click(function(){
+        var formstuff = $('.formclass').serializeArray()
+        formstuff = {name: formstuff[0].value, location: formstuff[1].value, languange: formstuff[2].value, comment: formstuff[3].value}
+        socket.emit('posting_form', formstuff)
+        })
+        socket.on('submitted_data', function(data){
+          console.log(data);
+          // $('.thething').html("<h1> name: "+data[0].value + "</h1>" + "<h1> location: "+data[1].value + "</h1>" + "<h1> language: "+data[2].value + "</h1>" + "<h1> comments: "+data[3].value + "</h1>" + "<h1> and your lucky number is " + data[4] + "<h1>")
+          $('.thething').html("<h1> you emiited the following info to the server:" + JSON.stringify(data) + "</h1>")
+        })
+        socket.on('random_number', function(data){
+          $('.thething').append("<h1> and your lucky number is " + data)
+        })
+        })
+    </script>
+  </head>
+  <body>
+    <form class = "formclass">
+      Your Name:
+      <input type="text" name="name"><br>
+      Dojo Location:
+      <select name="dojo">
+        <option value="San Jose">San Jose</option>
+        <option value="Seattle">Seattle</option>
+        <option value="Berkley">Berkley</option>
+      </select><br>
+      Favorite Language:
+      <select name="lang">
+        <option value="Javascript">Javascript</option>
+        <option value="Python">Python</option>
+        <option value="Swift">Swift</option>
+      </select><br>
+      <textarea name="comment" rows="8" cols="80" placeholder="comment"></textarea><br>
+      <input class ="buttonclass" type="button" name="submit" value="submit">
+    </form>
+    <div class ="thething">
+    </div>
+  </body>
+</html>
