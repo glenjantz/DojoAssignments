@@ -1,3 +1,4 @@
 *.pyc
 /djangoenv
 /py2flaskenv
+/node_modules

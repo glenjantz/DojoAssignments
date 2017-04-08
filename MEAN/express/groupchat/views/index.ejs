@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>talk to us</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+<script>
+  $(document).ready(function(){
+    var socket = io.connect();
+    var currentuser;
+    var currentid;
+    var name = prompt("Please enter your name");
+    currentuser = name;
+    socket.emit("got_a_new_user", {user: name});
+    // socket.on('new_user', function(data){
+    //
+    // })
+    socket.on('load', function(data){
+      var currentuser = data.current;
+      currentid = data.id;
+      var messages = data.messages;
+      var messagestring = "";
+        $('#messagebox').html("");
+      for(var i=0;i<messages.length;i++){
+        messagestring += "<p>" + messages[i].name + ": " + messages[i].message + "</p>";
+      }
+      $('#messagebox').append(messagestring);
+
+      $('#userbox').html("");
+      for(var i in data.users){
+        $('#userbox').append("<div id=" + data.users[i].id + "><h1>" + data.users[i].name + " with the id of " + data.users[i].id +"</h1></div>");
+      }
+      console.log(data.messages);
+    })
+    $('#new_message').submit(function(){
+      socket.emit('new_message', {message: $('#actualmessage').val(), user: currentuser});
+      $('#actualmessage').val("");
+      return false;
+    });
+    socket.on('show_new_message', function(data){
+      $('#messagebox').append("<p>" + data.name + ": " + data.message + "</p>");
+    });
+    socket.on('disconnected', function(data){
+        $('#messagebox').append("<p>" + data.name + ": " + data.message + "</p>");
+        $('#userbox').find('div[id=' + data.id + ']').remove();
+
+    });
+
+
+
+
+
+
+  })
+</script>
+  </head>
+  <body>
+    <div id ="messagebox">
+    <h1>Conversation Board</h1>
+    </div>
+    <form id="new_message">
+      <input type="text" id="actualmessage" placeholder="enter message">
+      <input type="submit">
+    </form>
+    <div id ="userbox">
+
+    </div>
+  </body>
+</html>
