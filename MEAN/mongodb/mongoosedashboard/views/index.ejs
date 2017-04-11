@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>mongeese</title>
+  </head>
+  <body>
+    <h1>Look at all these owls</h1>
+      <% for(var i in owls){ %>
+        <h3> name: <%= owls[i].name  %></h3>
+        <h3> number of legs: <%= owls[i].numlegs  %></h3>
+        <h3> size: <%= owls[i].size  %></h3>
+        <form action="/mongooses/<%=owls[i].id%>">
+          <input type="submit" value="show me the owl">
+        </form>
+      <%  } %>
+
+      <form action="/mongooses/new">
+        <input type="submit" value="Add a new Owl">
+      </form>
+
+  </body>
+</html>

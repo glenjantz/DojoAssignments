@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>look at this owl</title>
+  </head>
+  <body>
+      <h3> name: <%= owls.name  %></h3>
+      <h3> number of legs: <%= owls.numlegs  %></h3>
+      <h3> size: <%= owls.size  %></h3>
+    <form action="/">
+      <input type="submit" value="Go Home">
+    </form>
+    <form action="/mongooses/edit/<%=owls.id%>">
+      <input type="submit" value="Edit the owl">
+    </form>
+    <form action="/mongooses/destroy/<%=owls.id%>" method="post">
+      <input type="submit" value="Delete this owl">
+    </form>
+
+  </body>
+</html>

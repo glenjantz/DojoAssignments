@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>add a new owl</title>
+  </head>
+  <body>
+    <h1>Add a new owl to the collection of owls</h1>
+    <form action="/mongooses" method="post">
+      name:
+      <input type="text" name="name"><br>
+      number of legs:
+      <input type="text" name="numlegs"><br>
+      size of owl:
+      <input type="text" name="size"><br>
+      <input type="submit">
+    </form>
+    <% if(typeof(errors) != 'undefined' ) { %>
+      <% for (var x in errors) { %>
+          <p><%= errors[x].message %></p>
+      <% } %>
+   <% } %>
+  </body>
+</html>

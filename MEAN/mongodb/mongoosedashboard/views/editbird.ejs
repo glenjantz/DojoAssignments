@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>edit the owl</title>
+  </head>
+  <body>
+    <form action="/mongooses/<%=owls.id%>" method="post">
+      name:
+      <input type="text" name="name" value="<%=owls.name%>"><br>
+      number of legs:
+      <input type="text" name="numlegs" value="<%=owls.numlegs%>"><br>
+      size of owl:
+      <input type="text" name="size" value="<%=owls.size%>"><br>
+      <input type="submit" value="submit">
+    </form>
+    <% if(typeof(errors) != 'undefined' ) { %>
+      <% for (var x in errors) { %>
+          <p><%= errors[x].message %></p>
+      <% } %>
+   <% } %>
+  </body>
+</html>
