@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <meta charset="utf-8">
+    <title>c and d</title>
+    <script src='bower_components/angular/angular.js'/></script>
+    <script type="text/javascript">
+    var app = angular.module('app', []);
+    app.controller('foodsController', function ($scope){
+        $scope.foods = ["bananas","pizza","peaches","cream"];
+        $scope.addFood = function (){
+          // add to the array
+          $scope.foods.push($scope.newFood);
+          $scope.newFood = null;
+      }
+    });
+    </script>
+  </head>
+  <body>
+    <div ng-controller='foodsController'>
+      <h3>Add a new food!</h3>
+      <form ng-submit="addFood()">
+          Name: <input type='text' ng-model='newFood'>
+          <input type='submit' value='add new food'>
+      </form>
+      <input placeholder="filter..."type="text" ng-model="foodFilter">
+      ////if
+      <div ng-if="foodFilter">
+        <p>currently typing {{newFood}}</p>
+      </div>
+
+
+      <ul>
+          <li ng-repeat="food in foods | filter:foodFilter">{{food}}</li>
+      </ul>
+    </div>
+    ///////////////////////////init
+    <div ng-init="users=[{user:'glen'},{user:'urian'},{user:'car'}]">
+   <ul>
+     <li ng-repeat="user in users">Name: {{user.user}}</li>
+   </ul>
+   /////////////////show hide
+   <form>
+    <input type="checkbox" ng-model="shows">
+    <label for="show">Show</label>
+    <input type="checkbox" ng-model="hide">
+    <label for="hide">Hide</label>
+    <p ng-show="shows">This shows on check</p>
+    <p ng-hide="hide">This hides on check</p>
+  </form>
+ </div>
+
+  </body>
+</html>

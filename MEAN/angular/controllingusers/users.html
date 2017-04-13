@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>controlling users</title>
+    <script src='bower_components/angular/angular.js'></script>
+    <script type='text/javascript'>
+      var myApp = angular.module('myApp', []);
+      myApp.controller('userController', ['$scope', function ($scope){
+        // we don't need a factory for this demo, it wouldn't make a difference if we did.
+          $scope.users = [
+              {Fname:'Glen', Lname: "jantz", favlang:'js'},
+              {Fname:'Urian', Lname: "chang", favlang:'js'},
+              {Fname:'Car', Lname: "yen",  favlang:'js'}
+          ];
+          $scope.addUser = function(){
+            $scope.users.push($scope.newUser);
+            $scope.newUser = {};
+          }
+          $scope.deleteUser = function(index,justone){
+            $scope.users.splice(index,justone);
+          }
+      }]);
+    </script>
+  </head>
+<body ng-app='myApp'>
+  <div ng-controller='userController'>
+    <form ng-submit="addUser()">
+      First Name: <input type="text" ng-model="newUser.Fname">
+      Last Name: <input type="text" ng-model="newUser.Lname">
+      Favorite Language: <input type="text" ng-model="newUser.favlang">
+      <input type="submit" value="Create User">
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Fav Language</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(index, user) in users">
+          <td>{{user.Fname}}</td>
+          <td>{{user.Lname}}</td>
+          <td>{{user.favlang}}</td>
+          <td><input type="submit" value="Delete" ng-click="deleteUser(index, 1)"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </body>
+</html>
