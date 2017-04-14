@@ -1,0 +1,15 @@
+<div ng-controller="playersController">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="player in players">
+        <td>{{player.name}}</td>
+        <td>{{player.team}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

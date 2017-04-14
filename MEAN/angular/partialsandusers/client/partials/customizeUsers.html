@@ -18,7 +18,7 @@
     </thead>
     <tbody>
       <tr ng-repeat="user in users">
-        <td>{{user.fname}}</td>
+        <td style= "color: blue" ng-click="oneUser(user)">{{user.fname}}</td>
         <td>{{user.lname}}</td>
         <td>{{user.flang}}</td>
         <td><input type="submit" value="Delete" ng-click="deleteUser(user)"></td>

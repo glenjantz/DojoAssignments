@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<!-- problem 1 - script sources inaccurate -->
+<!-- problem 2 - config had a comma -->
+<!-- problem 3  - editController had bad variable reference $routeParams-->
+<!-- problem 4 - html tag did not have ng-app -->
+<!-- problem 5 - templateURLs inaccurate -->
+<!-- problem 6 - location was missing $ in indexController -->
+
+
+<head>
+  <meta charset="UTF-8">
+  <script src='angular/angular.js'></script>
+  <script src='angular-route/angular-route.js'></script>
+  <script src="/config/routes.js"></script>
+  <script src="/factories/userfactory.js"></script>
+  <script src="/controllers/indexController.js"></script>
+  <script src="/controllers/editController.js"></script>
+  <script src="/controllers/newController.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div ng-view>
+  </div>
+
+</body>
+
+</html>

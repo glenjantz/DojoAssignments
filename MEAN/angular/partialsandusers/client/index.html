@@ -60,8 +60,13 @@
         }
         $scope.deleteUser = function(object){
           userFactory.deleteUser(object);
+          $scope.users = [];
+        }
+        $scope.oneUser = function(object){
+          $scope.users = [object];
         }
       }]);
+
     </script>
   </head>
   <body>

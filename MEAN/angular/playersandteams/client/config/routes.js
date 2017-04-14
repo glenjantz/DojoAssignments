@@ -12,6 +12,10 @@ myApp.config(function ($routeProvider){
     templateUrl: 'static/partials/associations.html',
     controller: 'associationsController'
   })
+  .when('/:teamname',{
+    templateUrl: 'static/partials/team.html',
+    controller: 'playersController'
+  })
   .otherwise({
     redirectTo: '/players'
   });

@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngMessages']);
 myApp.factory('playerFactory', function(){
   var factory = {};
   var players = [
