@@ -2,7 +2,7 @@ var express = require("express");
 var bodyParser = require('body-parser');
 var app = express();
 app.use(express.static(__dirname + "/static"));
-
+console.log(__dirnname)
 // This sets the location where express will look for the ejs views
 app.set('views', __dirname + '/views');
 // Now lets set the view engine itself so that express knows that we are using ejs as opposed to another templating engine like jade

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <title></title>
+ <!-- THESE TWO VERSIONS BELOW MUST MATCH (good thing bower will catch that for us, but be aware if you are using CDN's)!!! -->
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+<script>
+    //  inject the ngRoute dependency in the module.
+    var myApp = angular.module('myApp', ['ngRoute']);
+    //  use the config method to set up routing:
+    myApp.config(function ($routeProvider) {
+      $routeProvider
+        .when('/',{
+            templateUrl: 'partials/partial1.html',
+        })
+        .when('/partial2',{
+            templateUrl: 'partials/partial2.html'
+        })
+        .otherwise({
+          redirectTo: '/'
+        });
+    });
+    </script>
+  </head>
+  <body>
+        <div ng-view>
+        </div>
+        <a href="#!/">Partial 1</a>
+        <a href="#!/partial2">Partial 2</a>
+    <h1>hello world</h1>
+  </body>
+</html>

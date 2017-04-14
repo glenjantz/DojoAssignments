@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>products with a factory</title>
+    <script src='bower_components/angular/angular.js'></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div ng-controller="productsController">
+      <form ng-submit="create()">
+        Product Name: <input type="text" ng-model="newproduct.name"><br>
+        Product Price: <input type="text" ng-model="newproduct.price"><br>
+        <input type="submit" value="Add Product">
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="product in products | orderBy: '-price'">
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td><input type="submit" value="Delete" ng-click="removething(product)"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

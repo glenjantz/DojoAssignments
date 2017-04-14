@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>testing...</title>
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+    <script type="text/javascript">
+      var myApp = angular.module('myApp', ['ngRoute']);
+      myApp.config(function ($routeProvider){
+        $routeProvider
+        .when('/',{
+          templateUrl: 'partials/userList.html',
+          controller: 'UserListController'
+        })
+        .when('/custom',{
+          templateUrl: 'partials/customizeUsers.html',
+          controller: 'CustomizeUsersController'
+        })
+        .otherwise({
+          redirectTo: '/'
+        });
+      });
+      myApp.factory('userFactory', function(){
+        var factory = {};
+        var users = [
+          {fname: "Glen", lname: "Jantz", flang: "Js"},
+          {fname: "Urian", lname: "Chang", flang: "Js"},
+          {fname: "Car", lname: "Yen", flang: "Js"}
+        ];
+        factory.index = function(callback){
+          callback(users);
+        }
+        factory.addUser = function (object){
+          users.push(object);
+        }
+        factory.deleteUser = function(object){
+          users.splice(users.indexOf(object),1)
+        }
+        return factory;
+      });
+      myApp.controller('UserListController' , ['$scope', 'userFactory', '$location', function ($scope, userFactory, $location){
+        console.log($location)
+        $scope.users = [];
+        userFactory.index(function(data){
+          $scope.users = data;
+        });
+
+      }]);
+      myApp.controller('CustomizeUsersController', ['$scope', 'userFactory', '$location', function ($scope, userFactory, $location){
+        $scope.users = [];
+        $scope.newUser = {};
+        userFactory.index(function(data){
+          $scope.users = data;
+        });
+        $scope.addUser = function(){
+          userFactory.addUser($scope.newUser);
+          $scope.newUser = {};
+          $location.url('/list');
+        }
+        $scope.deleteUser = function(object){
+          userFactory.deleteUser(object);
+        }
+      }]);
+    </script>
+  </head>
+  <body>
+    <a href="#!/custom">Customize Users</a> | <a href="#!/">User List</a>
+    <div ng-view>
+
+    </div>
+  </body>
+</html>
