@@ -7,14 +7,10 @@ module.exports = function(app){
   app.get('/', function(req, res) {
     res.render('index')
   });
-  //retrieve all friends
+  //retrieve all users
   app.get('/users', users.index);
-  //create one friends
+  //create one user
   app.post('/users', users.register);
-  //update one friend by id
-  // app.put('/friends/:id', users.update);
-  //show one friend by id
-  // app.get('/friends/:id', users.show)
-  //delete one friend by id
-  // app.delete('/friends/:id', users.deleted)
+  //validate user login
+  app.post('/login', users.login);
 };

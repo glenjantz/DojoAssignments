@@ -25,5 +25,18 @@ module.exports = {
         res.json(user)
       }
     });
-    }
+  },
+  login: function(req, res){
+    console.log('this is the req.body', req.body);
+    User.findOne({email: req.body.email}, function(err, user){
+      if(err){
+        console.log('errored finding the email')
+        res.json({errors: {login: {message: "invalid email or pass"}}});
+      }else if(user && user.validPassword(req.body.pass)){
+        res.json({_id: user._id, name: user.fname})
+      }else{
+        res.json({errors: {login: {message: "invalid email or pass"}}})
+      }
+    })
+  }
 }

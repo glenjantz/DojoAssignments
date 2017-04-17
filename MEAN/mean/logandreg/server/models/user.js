@@ -28,7 +28,7 @@ UserSchema.methods.generateHash = function(pass) {
 
 // checking if password is valid
 UserSchema.methods.validPassword = function(pass) {
-    return bcrypt.compareSync(pass, this.password);
+    return bcrypt.compareSync(pass, this.pass);
 };
 
 UserSchema.pre('save', function(done) {

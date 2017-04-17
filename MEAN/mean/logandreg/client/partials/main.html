@@ -1,4 +1,5 @@
 <h1>Register!</h1>
+<h1>Welcome</h1>
 <form ng-model="reg" ng-submit="register()">
   {{errors.email.message}}
   Email: <input type="email" ng-model="reg.email"><br>
@@ -16,7 +17,10 @@
 </form>
 
 <h1>Log in!</h1>
-<form ng-model="log">
+<form ng-model="log" ng-submit="login()">
+  {{errors.login.message}}
   Email: <input type="text" ng-model="log.email">
+  {{errors.login.message}}
   Password: <input type="text" ng-model="log.pass">
+  <input type="submit" value="Log in">
 </form>

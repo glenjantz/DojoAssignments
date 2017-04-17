@@ -6,11 +6,10 @@ myApp.factory('usersFactory', ['$http', function($http) {
 
   //index populates the friends array from the db then sends to the controller
   factory.index = function(callback) {
-
       $http.get('/users').then(function(returned_data){
         // console.log(returned_data.data);
         users = returned_data.data;
-        callback(users);
+        callback(users, user);
       });
   }
 
@@ -22,6 +21,16 @@ myApp.factory('usersFactory', ['$http', function($http) {
           callback(returned_data);
         }
       });
+  }
+  factory.login = function (user, callback){
+    $http.post('/login', user).then(function(returned_data){
+       user = returned_data.data;
+      console.log('this is the returned data', returned_data);
+      console.log('this is the user', user)
+      if (typeof(callback) == 'function'){
+        callback(returned_data);
+      }
+    })
   }
   return factory;
 }]);
