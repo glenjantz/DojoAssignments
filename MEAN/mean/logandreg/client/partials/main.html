@@ -1,0 +1,22 @@
+<h1>Register!</h1>
+<form ng-model="reg" ng-submit="register()">
+  {{errors.email.message}}
+  Email: <input type="email" ng-model="reg.email"><br>
+  {{errors.fname.message}}
+  First Name: <input type="text" ng-model="reg.fname"><br>
+  {{errors.lname.message}}
+  Last Name: <input type="text" ng-model="reg.lname"><br>
+  {{errors.pass.message}}
+  Password: <input type="text" ng-model="reg.pass"><br>
+  {{errors.passC.message}}
+  Confirm Password: <input type="text" ng-model="reg.passC"><br>
+  {{errors.birthday.message}}
+  Birthday: <input type="date" ng-model="reg.bday"><br>
+  <input type="submit" value="Register">
+</form>
+
+<h1>Log in!</h1>
+<form ng-model="log">
+  Email: <input type="text" ng-model="log.email">
+  Password: <input type="text" ng-model="log.pass">
+</form>

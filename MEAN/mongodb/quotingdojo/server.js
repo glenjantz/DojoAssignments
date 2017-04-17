@@ -56,7 +56,6 @@ app.post('/', function(req, res){
     //handle errors
     if(err){
       console.log('something went wrong');
-
       res.render('index', {errors: quote.errors})
     }else{
       console.log('successfully added to db');

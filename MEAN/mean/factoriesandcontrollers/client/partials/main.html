@@ -1,0 +1,20 @@
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Edit link</th>
+        <th>Single View</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="friend in friends">
+        <td>{{friend.name}}</td>
+        <td><a href="#!/edit/{{friend._id}}">Edit this friend</td>
+        <td><a href="#!/show/{{friend._id}}">Show this friend</td>
+          <td><form ng-submit="delete(friend._id, friend)">
+            <input type="submit" value="Delete this Friend"></td>
+          </form></td>
+      </tr>
+    </tbody>
+  </table>

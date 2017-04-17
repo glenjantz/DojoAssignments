@@ -1,4 +1,4 @@
-var mongoose = require('mongoose')
+var mongoose = require('mongoose');
 var OwlSchema = new mongoose.Schema({
   name: {type: String,
          required: [true, "name must be greater than 3 characters"],
