@@ -6,6 +6,7 @@ var reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-
 //make the schema
 var UserSchema = new mongoose.Schema({
   email: {type: mongoose.SchemaTypes.Email,
+          unique: true,
           required: true},
   fname: {type: String,
          required: [true,"first name must be at least 3 characters"],

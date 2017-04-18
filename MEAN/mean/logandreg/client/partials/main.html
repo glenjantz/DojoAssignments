@@ -1,5 +1,6 @@
 <h1>Register!</h1>
 <h1>Welcome</h1>
+{{errors.exists.message}}
 <form ng-model="reg" ng-submit="register()">
   {{errors.email.message}}
   Email: <input type="email" ng-model="reg.email"><br>
