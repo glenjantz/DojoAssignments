@@ -7,7 +7,7 @@ $scope.status = true;  //used for showmore
 //get all the users
   var index = function () {
       usersFactory.index(function(data) {
-          console.log('this is the data for the users index', data);
+          // console.log('this is the data for the users index', data);
           $scope.users = data;
       })
   }
@@ -15,7 +15,7 @@ $scope.status = true;  //used for showmore
   //get all the products
   var index2 = function () {
      productsFactory.index(function(data) {
-         console.log('this is the data for the products', data);
+        //  console.log('this is the data for the products', data);
          $scope.products = data;
      })
  }
@@ -23,7 +23,7 @@ $scope.status = true;  //used for showmore
  //get all the orders
  var index3 = function () {
     ordersFactory.index(function(data) {
-        console.log('this is the data for the orders', data);
+        // console.log('this is the data for the orders', data);
         $scope.orders = data;
     })
 }
@@ -40,7 +40,7 @@ $scope.showmore = function(){
     }
   }
 }
-
-
-index3();
+$scope.filter = function(){
+  $scope.namefilter = $scope.namefilterbefore;
+}
 }])

@@ -1,5 +1,8 @@
 <h1>Add a new Order</h1>
 <form ng-submit="create()">
+  {{errors.user.message}}
+  {{errors.product.message}}
+  {{errors.qty.message}}
   {{errors._user.message}}
   Customer: <select ng-model="newOrder._user">
               <option ng-repeat="user in users" ng-value="user._id">{{user.name}}</option>

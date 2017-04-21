@@ -9,7 +9,7 @@ myApp.factory('usersFactory', ['$http', function($http) {
       $http.get('/users').then(function(returned_data){
         // console.log(returned_data.data);
         users = returned_data.data;
-        console.log('this is the factory user', factory.user)
+        console.log('this is the factory user', factory.user);
         callback(users, factory.user);
       });
   }

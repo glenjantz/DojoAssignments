@@ -19,39 +19,40 @@ module.exports = {
      let order = new Order({qty: req.body.qty});
       order._user = req.body._user;
       order._product = req.body._product
-      order.save(function (err) {
-                 if(err){
-                   res.json(err)
-                 }else{
-                   res.json(order)
-                 }
-      })
-      // Product.find({_id: req.body._product}, function(err, product){
-      //   if(err){
-      //     console.log(err)
-      //   }else{
-      //    if((product.qtyleft - parseInt(req.body.qty)) >=  0){
-      //       product.qtyleft = product.qtyleft - parseInt(req.body.qty);
-      //       product.save(function(err){
-      //         if(err){
-      //           console.log(err)
-      //         }else{
-      //           order.save(function (err) {
-      //             if(err){
-      //               res.json(err)
-      //             }else{
-      //               res.json(order)
-      //             }
-      //           })
-      //         }
-      //       })
-      //     }
-      //     else{
-      //       res.json({error: "not enough stock to order this qty"})
-      //     }
-      //   }
-      //
+      // order.save(function (err) {
+      //            if(err){
+      //              res.json(err)
+      //            }else{
+      //              res.json(order)
+      //            }
       // })
+      Product.findOne({_id: req.body._product}, function(err, product){
+        if(err){
+          console.log(err)
+          // res.json({errors:{user:{message: "could not find product"}}})
+        }else{
+         if((product.qtyleft - req.body.qty) >=  0){
+            product.qtyleft = product.qtyleft - req.body.qty;
+            product.save(function(err){
+              if(err){
+                console.log(err)
+              }else{
+                order.save(function (err) {
+                  if(err){
+                    res.json(err)
+                  }else{
+                    res.json(order)
+                  }
+                })
+              }
+            })
+          }
+          else{
+            res.json({errors: {message: "not enough stock to order this qty"}})
+          }
+        }
+
+      })
 
     }
 }
