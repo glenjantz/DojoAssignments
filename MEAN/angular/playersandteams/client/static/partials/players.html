@@ -3,6 +3,7 @@
     Player Name: <input name="name"type="text" ng-model="newPlayer.name" minlength="4" required><br>
     <input type="submit" value="Add Product">
   </form>
+  <!-- <div ng-messages="playerForm.name.$error" ng-show="playerForm.name.$valid && playerForm.name.$touched"> -->
   <div ng-messages="playerForm.name.$error">
     <p ng-message="minlength">The player name is too short.</p>
     <p ng-message="required">The player name is required.</p>
