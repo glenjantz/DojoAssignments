@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>random word generator</title>
+  </head>
+  <body>
+    <h1>generate a random word</h1>
+    <h1>this is attempt # {{request.session.count}} </h1>
+    <h1>heres your random word {{request.session.string}}</h1>
+    <form action="/increment">
+      <input type="submit" value="generate">
+    </form>
+  </body>
+</html>
