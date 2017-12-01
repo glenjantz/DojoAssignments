@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>mongeese dash</title>
+  </head>
+  <body>
+    <% for(var i in rabbits){ %>
+      <h3> <%= rabbits[i].name %></h3>
+      <h3> <%= rabbits[i].babies %></h3>
+      <h3> <%= rabbits[i].size %></h3>
+      <h3> <%= rabbits[i].id %></h3>
+      <form action="/mongooses/<%=rabbits[i].id%>">
+        <input type="submit" value="show me the rabbit">
+      </form>
+      <hr>
+  <%  } %>
+  <a href = "/mongooses/new"> add a new rabbit</a>
+  </body>
+</html>

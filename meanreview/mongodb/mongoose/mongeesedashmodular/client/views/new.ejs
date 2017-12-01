@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>new rabbit</title>
+  </head>
+  <body>
+    <h1>make a new rabbit</h1>
+    <% if(typeof(errors) != 'undefined' ) { %>
+      <% for (var x in errors) { %>
+        <p><%= errors[x].message %></p>
+      <% } %>
+    <% } %>
+    <form action="/mongooses" method="post">
+      name: <input type="text" name="name"><br>
+      number of babies: <input type="text" name="babies"><br>
+      size: <input type="text" name="size"><br>
+      <input type="submit" value="submit">
+    </form>
+  </body>
+</html>
