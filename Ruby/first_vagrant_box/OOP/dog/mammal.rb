@@ -1,5 +1,4 @@
 class Mammal
-  attr_accessor :health
   def initialize
     @health = 150
     self
