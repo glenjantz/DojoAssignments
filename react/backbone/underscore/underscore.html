@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="underscore-min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    var ironman = {
+        name: "Tony Stark",
+        alias: "Iron Man"
+        };
+        var avengers_array = [
+        {name: "Tony Stark", alias: "Iron Man", ability: "flight"},
+        {name: "Bruce Banner", alias: "The Incredible Hulk", ability: "superhuman strength"},
+        {name: "Steve Rogers", alias: "Captain America", ability: "superhuman strength"},
+        {name: "Clint Barton", alias: "Hawkeye", ability: "superior hand-eye coordination"},
+        {name: "Thor Odinson", alias: "Thor", ability: "teleportation"},
+        {name: "Natasha Romanova", alias: "Black Widow", ability: "espionage"}
+        ];
+
+        // .each()
+        // console.log(_.each(avengers_array, function(value, key){ alert(key+': '+value); }));
+        //– A simple function that can iterate over objects or arrays and even do some manipulation
+
+        // .map()
+        // var avengersAssemble = _.map(avengers_array, function(avenger){ return avenger; });
+        // console.log(avengersAssemble)
+        //Pushes each avenger object into a new array after funneling it through an optional transformation function
+
+
+
+        // .pluck()
+        // var avengerNames = _.pluck(avengers_array, 'name');
+        // console.log(avengerNames)
+        //– Often used with .map(). Returns or “plucks” only the values for the key specified as the second argument and places them in an array
+
+        // .where()
+        // var superhumanStrengthAvengersArray = _.where(avengers_array, {ability: "superhuman strength"});
+        // console.log(superhumanStrengthAvengersArray)
+        //– Returns an ARRAY of all values that contain a match to the key-value properties object
+
+        // .findWhere()
+        // var superhumanStrengthAvenger = _.findWhere(avengers_array, {ability: "superhuman strength"});
+        // console.log(superhumanStrengthAvenger)
+        // – Returns the FIRST value when it finds a match to the key-value properties object; if none are found then undefined is returned
+
+
+        // .filter()
+        // var superhumanStrengthAvengers = _.filter(avengers_array, function(avenger){ return avenger.ability == "superhuman strength"; });
+        // console.log(superhumanStrengthAvengers)
+        //– Returns an array of values that satisfy a predicate
+
+        // .sortBy()
+        // var sortedAvengerNames = _.sortBy(avengers_array, 'name');
+        // console.log(sortedAvengerNames)
+        //– Returns an ascending  sorted array based on the values tied to the key we specify
+        var myState = {
+         name: "Washington",
+         capital: "Olympia",
+         population: 7062000,
+         nickname: "The Evergreen State"
+        };
+        console.log(_.each(myState, function(value, key){ alert(key+': '+value); }));
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

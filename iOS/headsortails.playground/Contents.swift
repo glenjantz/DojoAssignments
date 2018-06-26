@@ -2,31 +2,31 @@
 
 import UIKit
 
-func tossCoin()->String{
-    print("Tossing a Coin")
-    let arr = ["heads","tails"]
-    let rando = Int(arc4random_uniform(UInt32(2)))
-    return ("\(arr[rando])")
-}
+//func tossCoin()->String{
+//    print("Tossing a Coin")
+//    let arr = ["heads","tails"]
+//    let rando = Int(arc4random_uniform(UInt32(2)))
+//    return ("\(arr[rando])")
+//}
 //print(tossCoin())
 
-//func tossCoin() -> String {
-//    let coin = Int(arc4random_uniform(UInt32(2)))
-//    
-//    if coin == 0 {
-//        return "Heads"
-//    }else {
-//        return "Tails"
-//    }
-//    
-//}
+func tossCoin() -> String {
+    let coin = Int(arc4random_uniform(UInt32(2)))
+    
+    if coin == 0 {
+        return "Heads"
+    }else {
+        return "Tails"
+    }
+    
+}
 //print(tossCoin())
 //
 func tossMultipleCoins(Numtosses: Int) -> Double {
     var heads = 0
     var tails = 0
     for _ in 1...Numtosses{
-        if tossCoin() == "heads"{
+        if tossCoin() == "Heads"{
             heads+=1
     }
         else{

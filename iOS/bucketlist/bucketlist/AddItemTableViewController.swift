@@ -21,9 +21,6 @@ class AddItemTableViewController: UITableViewController {
         delegate?.itemSaved(by: self, with: text!, at: indexPath)
     }
     
-    
-   
-
 
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         delegate?.cancelButtonPressed(by: self)

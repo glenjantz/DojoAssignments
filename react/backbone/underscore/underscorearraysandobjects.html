@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="underscore-min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    var ironman = {
+          name: "Tony Stark",
+          alias: "Iron Man"
+          };
+
+    var avengers_array = [
+          {name: "Tony Stark", alias: "Iron Man", ability: "flight"},
+          {name: "Bruce Banner", alias: "The Incredible Hulk", ability: "superhuman strength"},
+          {name: "Steve Rogers", alias: "Captain America", ability: "superhuman strength"},
+          {name: "Clint Barton", alias: "Hawkeye", ability: "superior hand-eye coordination"},
+          {name: "Thor Odinson", alias: "Thor", ability: "teleportation"},
+          {name: "Natasha Romanova", alias: "Black Widow", ability: "espionage"}
+          ];
+
+          // .last() or .first()... does exactly what you think
+
+    var firstAvenger = _.first(avengers_array); // returns the first value in an array
+    var lastTwoAvengers = _.last(avengers_array, 2); // The optional second parameter allows for additional values to be returned, but when specified, comes back as an array
+
+    // .range()
+    var newArray = _.range(0,10); // returns an array with the values from argument1 (inclusive) to argument2 (exclusive)
+
+    // .defaults()
+    //The .defaults() function is a great one. What it does is supplies defaults to an object if they haven’t already been created.
+    // It’s kind of like a fail-safe for your apps
+    var almostAvenger = {
+     name: "John Q. Public",
+     alias: "John Q"
+    };
+
+    _.defaults(almostAvenger, {
+     name: "Need a Real Name",
+     alias: "Need a Superhero Name",
+     abilities: "Need Superhero Abilities"
+    });
+
+
+    console.log(firstAvenger);
+    console.log(lastTwoAvengers);
+    console.log(newArray)
+    console.log(almostAvenger)
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

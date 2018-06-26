@@ -6,18 +6,18 @@ import UIKit
 //    print(i)
 //}
 
-for i in 1...100{
-    if i % 3 == 0 && i % 5 == 0 {
-        continue
-    }
-    
-    else if i % 3 == 0{
-        print (i)
-    }
-    else if i % 5 == 0{
-        print (i)
-    }
-}
+//for i in 1...100{
+//    if i % 3 == 0 && i % 5 == 0 {
+//        continue
+//    }
+//
+//    else if i % 3 == 0{
+//        print (i)
+//    }
+//    else if i % 5 == 0{
+//        print (i)
+//    }
+//}
 
 
 
@@ -32,3 +32,10 @@ for i in 1...100{
 //        print ("buzz")
 //    }
 //}
+
+var dictionary = [
+    "Kobe": 24,
+    "Lebron": 23,
+    "Rondo": 9
+]
+print(dictionary["Kobe"]!)
